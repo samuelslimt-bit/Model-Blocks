@@ -7,7 +7,21 @@ import { Lightbox } from './components/Lightbox';
 import { PlaceholderImage } from './components/PlaceholderImage';
 import { galleryAlbums } from './data/galleryData';
 import { GalleryAlbum } from './types';
-import { ShieldCheck } from 'lucide-react';
+import {
+  ShieldCheck,
+  Target,
+  Compass,
+  Award,
+  Layers,
+  Factory,
+  Landmark,
+  Building2,
+  Church,
+  Mail,
+  Phone,
+  User,
+  CheckCircle2,
+} from 'lucide-react';
 
 export default function App() {
   const [activeSection, setActiveSection] = useState<string>('home');
@@ -77,12 +91,6 @@ export default function App() {
           className="border-b border-[#B9C2CC]/60 bg-[#FFFFFF] py-16 sm:py-24 px-4 sm:px-6 lg:px-8"
         >
           <div className="max-w-4xl mx-auto">
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#D9D7CC]/60 border border-[#B9C2CC] text-[#232B33] text-xs font-mono tracking-wider uppercase rounded-xs mb-6">
-              <span>Ref: 65749</span>
-              <span className="text-[#9AA0A6]">|</span>
-              <span>Patented Technology</span>
-            </div>
-
             <h1
               id="home-company-name"
               className="text-4xl sm:text-5xl font-bold tracking-tight text-[#232B33] mb-4 leading-tight"
@@ -103,7 +111,7 @@ export default function App() {
               id="home-description"
               className="text-base sm:text-lg text-[#5B6570] leading-relaxed max-w-2xl"
             >
-              Modify Services Limited is a Nigerian infrastructure technology company that manufactures Modify Blocks, an engineered concrete block designed to replace traditional sandcrete construction with a stronger, more consistent, and more efficient building material.
+              Modify Services Limited is a Nigerian infrastructure technology company that manufactures Modify Blocks (Patented Technology, Ref: 65749), an engineered concrete block designed to replace traditional sandcrete construction with a stronger, more consistent, and more efficient building material.
             </p>
           </div>
         </section>
@@ -126,9 +134,12 @@ export default function App() {
             {/* Left Column: Company Overview & Mission/Vision */}
             <div className="flex flex-col gap-6">
               <div>
-                <span className="text-xs uppercase tracking-widest font-semibold text-[#9AA0A6] mb-2 block font-mono">
-                  Company Overview
-                </span>
+                <div className="flex items-center gap-2 mb-2.5">
+                  <Building2 className="w-4 h-4 text-[#22699F]" aria-hidden="true" />
+                  <span className="text-xs uppercase tracking-widest font-bold text-[#232B33]">
+                    Company Overview
+                  </span>
+                </div>
                 <ExpandableBox
                   id="about-company-description"
                   previewText="Modify Services Limited is a transformative force in the Nigerian built environment, representing a strategic shift from traditional, labor-intensive construction toward a decentralized, technology-driven manufacturing model."
@@ -143,9 +154,12 @@ export default function App() {
                   className="bg-[#2E3947] p-5 sm:p-6 text-white rounded-sm shadow-sm flex flex-col justify-between"
                 >
                   <div>
-                    <span className="text-[#D96708] text-xs font-bold uppercase tracking-widest block mb-2">
-                      Mission
-                    </span>
+                    <div className="flex items-center gap-2 mb-2.5">
+                      <Target className="w-4 h-4 text-[#D96708]" aria-hidden="true" />
+                      <span className="text-[#D96708] text-xs font-bold uppercase tracking-widest block">
+                        Mission
+                      </span>
+                    </div>
                     <p className="text-xs sm:text-sm leading-relaxed text-[#DCE8F1]">
                       To redefine Nigerian infrastructure through localized innovation, delivering high-performance structural solutions that empower regional economies and ensure the long-term resilience of the nation&apos;s built environment.
                     </p>
@@ -157,11 +171,14 @@ export default function App() {
                   className="bg-[#3C4857] p-5 sm:p-6 text-white rounded-sm shadow-sm flex flex-col justify-between"
                 >
                   <div>
-                    <span className="text-[#D96708] text-xs font-bold uppercase tracking-widest block mb-2">
-                      Vision
-                    </span>
+                    <div className="flex items-center gap-2 mb-2.5">
+                      <Compass className="w-4 h-4 text-[#D96708]" aria-hidden="true" />
+                      <span className="text-[#D96708] text-xs font-bold uppercase tracking-widest block">
+                        Vision
+                      </span>
+                    </div>
                     <p className="text-xs sm:text-sm leading-relaxed text-[#DCE8F1]">
-                      To become the primary provider of structural components for all 36 states by Year 5, establishing the definitive benchmark for durability and engineering efficiency in West African construction.
+                      To become the primary provider of structural components across all 36 states, establishing the definitive benchmark for durability and engineering efficiency in West African construction.
                     </p>
                   </div>
                 </div>
@@ -173,9 +190,12 @@ export default function App() {
               id="about-leadership"
               className="bg-[#D9D7CC] p-6 sm:p-8 rounded-sm shadow-sm flex flex-col justify-center border border-[#B9C2CC]/60"
             >
-              <span className="text-xs uppercase tracking-widest font-semibold text-[#232B33]/70 mb-3 block font-mono">
-                Executive Leadership
-              </span>
+              <div className="flex items-center gap-2 mb-3">
+                <Award className="w-4 h-4 text-[#232B33]" aria-hidden="true" />
+                <span className="text-xs uppercase tracking-widest font-bold text-[#232B33]">
+                  Executive Leadership
+                </span>
+              </div>
               <blockquote className="italic text-[#232B33] text-base sm:text-lg leading-relaxed mb-6">
                 &ldquo;Our mandate extends beyond the physical act of building. We are implementing a security-conscious operational framework that prioritizes national development and de-risks the construction process. By decentralizing our production, we are fostering regional economic resilience and ensuring that premium-grade infrastructure is attainable across every geopolitical zone.&rdquo;
               </blockquote>
@@ -214,21 +234,34 @@ export default function App() {
           <div className="bg-[#FFFFFF] border-l-4 border-[#22699F] border-y border-r border-[#B9C2CC] rounded-sm p-6 mb-8 shadow-sm">
             <div className="flex items-start gap-3">
               <ShieldCheck className="w-6 h-6 text-[#22699F] shrink-0 mt-0.5" aria-hidden="true" />
-              <p
-                id="what-we-do-intro"
-                className="text-base sm:text-lg text-[#232B33] leading-relaxed font-medium"
-              >
-                Modify Services Limited manufactures Modify Blocks, an interlocking concrete block tested and certified by SGS Matrocast, a SANAS-accredited testing laboratory, under SANS 1215 standards.
-              </p>
+              <div>
+                <p
+                  id="what-we-do-intro"
+                  className="text-base sm:text-lg text-[#232B33] leading-relaxed font-medium"
+                >
+                  Modify Services Limited manufactures Modify Blocks (Patent Ref: 65749), an interlocking concrete block tested and certified by SGS Matrocast, a SANAS-accredited testing laboratory, under SANS 1215 standards.
+                </p>
+                <div className="mt-2.5 flex flex-wrap items-center gap-2">
+                  <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 bg-[#DCE8F1] text-[#22699F] text-xs font-semibold rounded-xs">
+                    <CheckCircle2 className="w-3.5 h-3.5" aria-hidden="true" /> SANS 1215 Certified
+                  </span>
+                  <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 bg-[#FFE3C7] text-[#D96708] text-xs font-semibold rounded-xs">
+                    <CheckCircle2 className="w-3.5 h-3.5" aria-hidden="true" /> SGS Matrocast Tested
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
 
           {/* Specification Table */}
           <div className="mb-10">
             <div className="flex items-center justify-between mb-3">
-              <h3 className="text-base font-bold text-[#232B33] uppercase tracking-wide">
-                Technical Specifications
-              </h3>
+              <div className="flex items-center gap-2">
+                <Layers className="w-4 h-4 text-[#22699F]" aria-hidden="true" />
+                <h3 className="text-base font-bold text-[#232B33] uppercase tracking-wide">
+                  Technical Specifications
+                </h3>
+              </div>
               <span className="text-xs text-[#9AA0A6] font-mono">
                 SANS 1215 Standards
               </span>
@@ -238,13 +271,16 @@ export default function App() {
 
           {/* Design Description Expandable Box */}
           <div className="mb-10">
-            <h3 className="text-xs uppercase tracking-widest font-semibold text-[#9AA0A6] mb-2 font-mono">
-              Engineering and Geometric Design
-            </h3>
+            <div className="flex items-center gap-2 mb-2.5">
+              <Layers className="w-4 h-4 text-[#D96708]" aria-hidden="true" />
+              <h3 className="text-xs uppercase tracking-widest font-bold text-[#232B33]">
+                Engineering and Geometric Design
+              </h3>
+            </div>
             <ExpandableBox
               id="design-description-box"
-              previewText="The block uses an interlocking, stackable, hollow-core design that reduces the amount of mortar required during construction."
-              revealedText="The hollow cores allow electrical and plumbing conduits to run through the block body, and improve thermal insulation while reducing the load placed on foundations."
+              previewText="The block uses an interlocking, stackable, hollow-core design that significantly reduces mortar usage, speeds up wall erection, and ensures consistent structural alignment."
+              revealedText="The precision-formed hollow cores permit internal routing of electrical and plumbing conduits without chasing walls. In addition, the internal air chambers enhance thermal insulation across living spaces and optimize total dead load on foundational footings."
             />
           </div>
 
@@ -257,66 +293,73 @@ export default function App() {
               {/* Government Infrastructure */}
               <div
                 id="market-government"
-                className="border border-[#B9C2CC] p-5 bg-white rounded-sm shadow-xs"
+                className="border border-[#B9C2CC] p-5 bg-white rounded-sm shadow-xs flex flex-col justify-between"
               >
-                <div className="text-[#22699F] font-bold text-xs uppercase tracking-wider mb-2">
-                  Government Infrastructure
+                <div>
+                  <div className="flex items-center gap-2 mb-2">
+                    <Landmark className="w-4 h-4 text-[#22699F]" aria-hidden="true" />
+                    <div className="text-[#22699F] font-bold text-xs uppercase tracking-wider">
+                      Government Infrastructure
+                    </div>
+                  </div>
+                  <p className="text-xs sm:text-sm text-[#5B6570] leading-relaxed">
+                    Schools, healthcare facilities, and public housing developments, where certified compressive strength and high dimensional uniformity lower long-term structural maintenance costs and accelerate public delivery schedules.
+                  </p>
                 </div>
-                <p className="text-xs sm:text-sm text-[#5B6570] leading-relaxed">
-                  schools and public housing, where the block&apos;s strength and consistency reduce long-term maintenance costs.
-                </p>
               </div>
 
               {/* Commercial and Industrial */}
               <div
                 id="market-commercial"
-                className="border border-[#B9C2CC] p-5 bg-white rounded-sm shadow-xs"
+                className="border border-[#B9C2CC] p-5 bg-white rounded-sm shadow-xs flex flex-col justify-between"
               >
-                <div className="text-[#22699F] font-bold text-xs uppercase tracking-wider mb-2">
-                  Commercial and Industrial
+                <div>
+                  <div className="flex items-center gap-2 mb-2">
+                    <Building2 className="w-4 h-4 text-[#22699F]" aria-hidden="true" />
+                    <div className="text-[#22699F] font-bold text-xs uppercase tracking-wider">
+                      Commercial and Industrial
+                    </div>
+                  </div>
+                  <p className="text-xs sm:text-sm text-[#5B6570] leading-relaxed">
+                    Shopping complexes, logistics warehouses, and event centers, where the high strength-to-weight ratio and precision interlocking joints support wide-span walling while reducing construction time and on-site material waste.
+                  </p>
                 </div>
-                <p className="text-xs sm:text-sm text-[#5B6570] leading-relaxed">
-                  malls, warehouses, and event halls, where the block&apos;s strength-to-weight ratio supports wide-span structures.
-                </p>
               </div>
 
               {/* Religious Infrastructure */}
               <div
                 id="market-religious"
-                className="border border-[#B9C2CC] p-5 bg-white rounded-sm shadow-xs"
+                className="border border-[#B9C2CC] p-5 bg-white rounded-sm shadow-xs flex flex-col justify-between"
               >
-                <div className="text-[#22699F] font-bold text-xs uppercase tracking-wider mb-2">
-                  Religious Infrastructure
+                <div>
+                  <div className="flex items-center gap-2 mb-2">
+                    <Church className="w-4 h-4 text-[#22699F]" aria-hidden="true" />
+                    <div className="text-[#22699F] font-bold text-xs uppercase tracking-wider">
+                      Religious Infrastructure
+                    </div>
+                  </div>
+                  <p className="text-xs sm:text-sm text-[#5B6570] leading-relaxed">
+                    Modern worship centers and community auditoriums, where the block supports clean architectural finishes, acoustic dampening, and the load-bearing requirements of large-capacity, high-ceiling assemblies.
+                  </p>
                 </div>
-                <p className="text-xs sm:text-sm text-[#5B6570] leading-relaxed">
-                  modern worship centers, where the block supports the aesthetic modularity and structural demands of large-capacity auditoriums.
-                </p>
               </div>
             </div>
           </div>
 
-          {/* Manufacturing Model and Five-Year Plan Expandable Boxes */}
+          {/* Manufacturing Model Expandable Box */}
           <div className="space-y-6">
             <div>
-              <h3 className="text-xs uppercase tracking-widest font-semibold text-[#9AA0A6] mb-2 font-mono">
-                Decentralized Manufacturing Model
-              </h3>
+              <div className="flex items-center gap-2 mb-2.5">
+                <Factory className="w-4 h-4 text-[#D96708]" aria-hidden="true" />
+                <h3 className="text-xs uppercase tracking-widest font-bold text-[#232B33]">
+                  Decentralized Manufacturing Model
+                </h3>
+              </div>
               <ExpandableBox
                 id="manufacturing-model-box"
                 variant="tint"
                 previewText="Modify Services Limited operates a decentralized six-zone manufacturing model, with a plant planned for each of Nigeria's geopolitical zones (North-West, North-Central, North-East, South-West, South-East, South-South)."
                 revealedText="Each plant is tuned to its regional terrain and demand profile, and every plant submits monthly samples for quality validation so that a block produced in one zone matches a block produced in any other zone."
-              />
-            </div>
-
-            <div>
-              <h3 className="text-xs uppercase tracking-widest font-semibold text-[#9AA0A6] mb-2 font-mono">
-                Five-Year Expansion Roadmap
-              </h3>
-              <ExpandableBox
-                id="five-year-plan-box"
-                previewText="The company's five-year plan involves establishing the six primary zonal plants in Years 1 and 2."
-                revealedText="The plan then expands to satellite assembly sites covering 24 states in Years 3 and 4, and reaches a manufacturing or distribution presence in all 36 states by Year 5."
               />
             </div>
           </div>
@@ -401,66 +444,61 @@ export default function App() {
               Contact Information
             </h2>
             <p className="text-sm text-[#5B6570] mt-3">
-              Official corporate directory and registry information.
+              Official corporate directory and contact details.
             </p>
           </div>
 
-          {/* Simple Information Block (No form) */}
+          {/* Compact Information Block */}
           <div
             id="contact-info-block"
-            className="rounded-sm bg-[#FFFFFF] border border-[#B9C2CC] p-6 sm:p-10 shadow-sm max-w-2xl"
+            className="rounded-sm bg-[#FFFFFF] border border-[#B9C2CC] p-5 sm:p-6 shadow-sm max-w-lg"
           >
-            <div className="space-y-4 text-base sm:text-lg">
+            <div className="space-y-3.5 text-sm sm:text-base">
               {/* Company Name */}
-              <div className="flex flex-col sm:flex-row sm:items-center border-b border-[#F4F4EF] pb-3 gap-1 sm:gap-4">
-                <span className="w-36 font-bold text-xs uppercase tracking-widest text-[#9AA0A6] shrink-0">
+              <div className="flex items-center justify-between border-b border-[#F4F4EF] pb-2.5">
+                <span className="flex items-center gap-2 font-bold text-xs uppercase tracking-widest text-[#9AA0A6]">
+                  <Building2 className="w-3.5 h-3.5 text-[#22699F]" aria-hidden="true" />
                   Entity
                 </span>
-                <span className="text-[#232B33] font-semibold text-base">
+                <span className="text-[#232B33] font-semibold text-sm sm:text-base">
                   Modify Services Limited
                 </span>
               </div>
 
               {/* Chief Executive Officer */}
-              <div className="flex flex-col sm:flex-row sm:items-center border-b border-[#F4F4EF] pb-3 gap-1 sm:gap-4">
-                <span className="w-36 font-bold text-xs uppercase tracking-widest text-[#9AA0A6] shrink-0">
+              <div className="flex items-center justify-between border-b border-[#F4F4EF] pb-2.5">
+                <span className="flex items-center gap-2 font-bold text-xs uppercase tracking-widest text-[#9AA0A6]">
+                  <User className="w-3.5 h-3.5 text-[#D96708]" aria-hidden="true" />
                   CEO
                 </span>
-                <span className="text-[#232B33] font-medium text-base">
+                <span className="text-[#232B33] font-medium text-sm sm:text-base">
                   Adeyemi Ishola Paul
                 </span>
               </div>
 
-              {/* Email (Placeholder marked in code) */}
-              <div className="flex flex-col sm:flex-row sm:items-center border-b border-[#F4F4EF] pb-3 gap-1 sm:gap-4">
-                <span className="w-36 font-bold text-xs uppercase tracking-widest text-[#9AA0A6] shrink-0">
+              {/* Email */}
+              <div className="flex items-center justify-between border-b border-[#F4F4EF] pb-2.5">
+                <span className="flex items-center gap-2 font-bold text-xs uppercase tracking-widest text-[#9AA0A6]">
+                  <Mail className="w-3.5 h-3.5 text-[#22699F]" aria-hidden="true" />
                   Email
                 </span>
-                {/* PLACEHOLDER: Replace with official corporate email address */}
-                <span className="text-[#22699F] font-mono text-sm sm:text-base">
-                  [placeholder, add real address]
-                </span>
+                <a
+                  href="mailto:info@modifyservices.com"
+                  className="text-[#22699F] font-mono text-xs sm:text-sm hover:underline hover:text-[#D96708] transition-colors"
+                >
+                  info@modifyservices.com
+                </a>
               </div>
 
               {/* Phone (Placeholder marked in code) */}
-              <div className="flex flex-col sm:flex-row sm:items-center border-b border-[#F4F4EF] pb-3 gap-1 sm:gap-4">
-                <span className="w-36 font-bold text-xs uppercase tracking-widest text-[#9AA0A6] shrink-0">
+              <div className="flex items-center justify-between pt-0.5">
+                <span className="flex items-center gap-2 font-bold text-xs uppercase tracking-widest text-[#9AA0A6]">
+                  <Phone className="w-3.5 h-3.5 text-[#5B6570]" aria-hidden="true" />
                   Telephone
                 </span>
                 {/* PLACEHOLDER: Replace with official corporate telephone number */}
-                <span className="text-[#5B6570] font-mono text-sm sm:text-base">
+                <span className="text-[#5B6570] font-mono text-xs sm:text-sm">
                   [placeholder, add real number]
-                </span>
-              </div>
-
-              {/* Address (Placeholder marked in code) */}
-              <div className="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-4 pt-1">
-                <span className="w-36 font-bold text-xs uppercase tracking-widest text-[#9AA0A6] shrink-0 pt-0.5">
-                  Office
-                </span>
-                {/* PLACEHOLDER: Replace with official corporate headquarters address */}
-                <span className="text-[#5B6570] text-sm sm:text-base leading-relaxed">
-                  [placeholder, add real office address]
                 </span>
               </div>
             </div>
