@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { PhotoItem } from '../types';
+import { Image as ImageIcon } from 'lucide-react';
 
 interface PlaceholderImageProps {
   photo: PhotoItem;
@@ -12,6 +13,36 @@ export const PlaceholderImage: React.FC<PlaceholderImageProps> = ({
   className = '',
   isCover = false,
 }) => {
+  const [imageError, setImageError] = useState(false);
+  const hasRealImage = Boolean(photo.imageUrl && !imageError);
+
+  if (hasRealImage) {
+    return (
+      <div
+        className={`relative w-full overflow-hidden bg-[#232B33] select-none flex flex-col justify-between ${className}`}
+        style={{ aspectRatio: '16/10' }}
+      >
+        <img
+          src={photo.imageUrl}
+          alt={photo.title}
+          referrerPolicy="no-referrer"
+          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+          onError={() => setImageError(true)}
+          loading="lazy"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#232B33]/80 via-transparent to-transparent pointer-events-none" />
+        <div className="absolute bottom-0 inset-x-0 bg-[#232B33]/90 backdrop-blur-xs px-3 py-1.5 border-t border-[#3C4857] flex items-center justify-between z-10">
+          <span className="text-[11px] text-[#DCE8F1] font-mono tracking-tight truncate">
+            {photo.title}
+          </span>
+          <span className="text-[10px] uppercase font-semibold text-[#22699F] tracking-wider px-1.5 py-0.2 bg-[#DCE8F1]/15 border border-[#22699F]/40 rounded-xs shrink-0 flex items-center gap-1">
+            <ImageIcon className="w-2.5 h-2.5" /> Photo
+          </span>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div
       className={`relative w-full overflow-hidden bg-[#2E3947] select-none flex flex-col justify-between ${className}`}
@@ -154,3 +185,4 @@ export const PlaceholderImage: React.FC<PlaceholderImageProps> = ({
     </div>
   );
 };
+

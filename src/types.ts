@@ -5,6 +5,8 @@ export interface PhotoItem {
   svgType: 'manufacturing' | 'block-detail' | 'facility' | 'workforce';
   aspectRatio?: string;
   technicalLabel: string;
+  imageUrl?: string;
+  driveFileId?: string;
 }
 
 export interface GalleryAlbum {

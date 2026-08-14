@@ -1,178 +1,201 @@
 import { GalleryAlbum } from '../types';
-
-/**
- * PLACEHOLDER GALLERY ASSETS
- * Note: These entries and SVG renderings serve as professional placeholders
- * for production and facility imagery. Replace with official high-resolution
- * photography upon deployment.
- */
+import modifySpecImg from '../assets/images/modify_spec_infographic_1786675625233.jpg';
+import modifyRebarImg from '../assets/images/modify_block_rebar_1786675637844.jpg';
+import modifyColorsImg from '../assets/images/modify_block_colors_1786675650243.jpg';
+import modifyFoundationImg from '../assets/images/modify_block_foundation_1786675662985.jpg';
+import modifyOnsiteImg from '../assets/images/modify_block_onsite_1786675675215.jpg';
+import facRoofImg from '../assets/images/facility_roof_painting_1786676154788.jpg';
+import facCraneSlabImg from '../assets/images/crane_slab_installation_1786676165500.jpg';
+import facSiteGarageImg from '../assets/images/site_garage_crane_1786676175845.jpg';
+import facUtilitySubstationImg from '../assets/images/facility_utility_substation_1786676280500.jpg';
+import facBlueRoofImg from '../assets/images/facility_blue_roof_1786676303811.jpg';
+import facInteriorRoomImg from '../assets/images/facility_interior_room_1786676324032.jpg';
+import facBungalowImg from '../assets/images/facility_bungalow_house_1786676343762.jpg';
+import workSpiritLevelImg from '../assets/images/workforce_spirit_level_1786676679350.jpg';
+import workScaffoldingImg from '../assets/images/workforce_scaffolding_team_1786676690401.jpg';
+import workFoundationTrenchImg from '../assets/images/workforce_foundation_trench_1786676703266.jpg';
+import workRetainingWallImg from '../assets/images/workforce_retaining_wall_1786676713449.jpg';
+import workCraneInstallImg from '../assets/images/workforce_crane_installation_1786676732210.jpg';
 
 export const galleryAlbums: GalleryAlbum[] = [
   {
-    id: 'manufacturing-production',
-    title: 'Manufacturing and Production',
-    subtitle: 'Block-pressing, vibration compaction, and automated quality checks',
-    coverImage: {
-      id: 'mfg-cover',
-      title: 'Hydraulic Compaction Station',
-      description: 'High-pressure hydraulic press station for precision block curing and compaction.',
-      svgType: 'manufacturing',
-      technicalLabel: 'Plant Line 01: Automated Hydraulic Press (Placeholder)',
-    },
-    photos: [
-      {
-        id: 'mfg-01',
-        title: 'Automated Hydraulic Compaction Rig',
-        description: 'Vibration and high-tonnage compaction system ensuring uniform 22.2 MPa density across each unit.',
-        svgType: 'manufacturing',
-        technicalLabel: 'Production Unit A1: Compaction Stage (Placeholder)',
-      },
-      {
-        id: 'mfg-02',
-        title: 'Precision Aggregate Batching System',
-        description: 'Computer-controlled moisture and aggregate ratio blending unit for consistency.',
-        svgType: 'manufacturing',
-        technicalLabel: 'Batching Unit: Moisture Calibration (Placeholder)',
-      },
-      {
-        id: 'mfg-03',
-        title: 'Automated De-molding and Curing Racks',
-        description: 'Controlled humidity curing bay ensuring gradual hydration and low permeability.',
-        svgType: 'manufacturing',
-        technicalLabel: 'Curing Bay 04: Hydration Cycle (Placeholder)',
-      },
-      {
-        id: 'mfg-04',
-        title: 'SGS Matrocast Quality Sampling Bench',
-        description: 'On-site compressive testing and dimensional tolerance validation per SANS 1215 standards.',
-        svgType: 'manufacturing',
-        technicalLabel: 'Quality Control Bench: Batch Validation (Placeholder)',
-      },
-    ],
-  },
-  {
     id: 'modify-block',
     title: 'The Modify Block',
-    subtitle: 'Interlocking geometry, hollow cores, and structural assemblies',
+    subtitle: 'Interlocking geometry, certified specifications, core reinforcement, and site assemblies',
     coverImage: {
       id: 'block-cover',
-      title: 'Interlocking Engineered Block',
-      description: 'Standard 385 x 190 x 180 mm interlocking unit with dual hollow cores.',
+      title: 'Modify Block Certified Specifications & Structural Versatility',
+      description: 'SGS Matrocast certified interlocking system featuring 22.2 MPa average compressive strength, 700 kN maximum load capacity, precision 385 x 180 x 190 mm dimensions, and dry-stacking mortarless alignment.',
       svgType: 'block-detail',
-      technicalLabel: 'Modify Block Geometry: Ref 65749 (Placeholder)',
+      imageUrl: modifySpecImg,
+      technicalLabel: 'Certified Technical Specifications (SANS 1215 / SGS Matrocast)',
     },
     photos: [
       {
-        id: 'block-01',
-        title: 'Standard Interlocking Unit (385 x 190 x 180 mm)',
-        description: 'Engineered interlocking tongue-and-groove interface eliminating thick horizontal mortar joints.',
+        id: 'block-spec-infographic',
+        title: 'Certified Technical Specifications & Structural Versatility',
+        description: 'Official SGS Matrocast laboratory-validated technical specifications: 22.2 MPa compressive strength, 700 kN load capacity, precision 385 x 180 x 190 mm geometry, mortarless alignment, and advanced structural design applications.',
         svgType: 'block-detail',
-        technicalLabel: 'Component Specification: Unit Model ST-180 (Placeholder)',
+        imageUrl: modifySpecImg,
+        technicalLabel: 'SGS Matrocast Lab Test Results (SANS 1215)',
       },
       {
-        id: 'block-02',
-        title: 'Dual Hollow-Core Conduit Alignment',
-        description: 'Vertical alignment of cores allows continuous runs for electrical wiring and plumbing pipes.',
+        id: 'block-rebar-reinforcement',
+        title: 'Hollow-Core Vertical & Horizontal Steel Reinforcement',
+        description: 'Close-up detail showing vertical rebar tying and continuous horizontal reinforcement running through recessed conduit channels and hollow core cavities without disrupting interlocking alignment.',
         svgType: 'block-detail',
-        technicalLabel: 'Conduit Channel Integration Detail (Placeholder)',
+        imageUrl: modifyRebarImg,
+        technicalLabel: 'Core Rebar & Structural Tie Integration',
       },
       {
-        id: 'block-03',
-        title: 'Dry-Stacking Wall Assembly Test',
-        description: 'Modular wall section demonstrating precise self-alignment and tight joints.',
+        id: 'block-color-strata',
+        title: 'Interlocking Multi-Tone Dry-Stack Test Wall',
+        description: 'Precision factory assembly demonstrating interlocking lugs, recessed stumble design, tight mortarless joints, and varied natural pigment strata (terracotta, sandstone, and standard grey).',
         svgType: 'block-detail',
-        technicalLabel: 'Wall Assembly Test: Tolerance Verification (Placeholder)',
+        imageUrl: modifyColorsImg,
+        technicalLabel: 'Precision Interlocking Mechanism & Color Finishes',
       },
       {
-        id: 'block-04',
-        title: 'Corner Interlock and Grout Integration',
-        description: 'Corner block configuration showing rebar placement and localized structural grout fill.',
+        id: 'block-foundation-layout',
+        title: 'Substructure Perimeter Foundation Wall',
+        description: 'On-site installation showing rapid dry-stacking of Modify Blocks forming a true, plumb perimeter foundation with corner interlocking returns and gravel backfill bed.',
         svgType: 'block-detail',
-        technicalLabel: 'Structural Corner Detail (Placeholder)',
+        imageUrl: modifyFoundationImg,
+        technicalLabel: 'Foundation Layout & Perimeter Dry-Stacking',
+      },
+      {
+        id: 'block-site-assembly',
+        title: 'Completed Interlocking Wall on Active Project Site',
+        description: 'Finished multi-course Modify Block masonry wall constructed on an active residential infrastructure site, demonstrating high structural plumbness and clean surface lines.',
+        svgType: 'block-detail',
+        imageUrl: modifyOnsiteImg,
+        technicalLabel: 'Field Assembly & Full Wall Demonstration',
       },
     ],
   },
   {
     id: 'facilities-sites',
     title: 'Facilities and Sites',
-    subtitle: 'Regional zonal plants, stockyards, and assembly infrastructure',
+    subtitle: 'Regional zonal plants, active sites, and building infrastructure',
     coverImage: {
       id: 'facility-cover',
-      title: 'Zonal Plant Layout and Logistics Yard',
-      description: 'Decentralized production facility designed for modular scalability across geopolitical zones.',
+      title: 'Facility and Site Construction',
+      description: '',
       svgType: 'facility',
-      technicalLabel: 'Regional Zonal Plant 01: South-West Hub (Placeholder)',
+      imageUrl: facBungalowImg,
+      technicalLabel: 'Infrastructure Facility 01',
     },
     photos: [
       {
         id: 'fac-01',
-        title: 'Primary Zonal Manufacturing Facility',
-        description: 'Enclosed batching plant, pressing shed, and covered storage infrastructure.',
+        title: 'Completed Residential Infrastructure Project',
+        description: '',
         svgType: 'facility',
-        technicalLabel: 'Zonal Facility Overview: South-West (Placeholder)',
+        imageUrl: facBungalowImg,
+        technicalLabel: 'Site Reference 01',
       },
       {
         id: 'fac-02',
-        title: 'Organized Distribution Stockyard',
-        description: 'Palletized stock waiting for regional dispatch to infrastructure projects.',
+        title: 'Community Facility Finishing and Roofing',
+        description: '',
         svgType: 'facility',
-        technicalLabel: 'Logistics Staging Area: Pallet Storage (Placeholder)',
+        imageUrl: facRoofImg,
+        technicalLabel: 'Site Reference 02',
       },
       {
         id: 'fac-03',
-        title: 'Satellite Assembly and Batching Site',
-        description: 'Modular satellite plant footprint designed for swift deployment in state capitals.',
+        title: 'Crane-Assisted Hollowcore Slab Installation',
+        description: '',
         svgType: 'facility',
-        technicalLabel: 'Satellite Plant Blueprint: Zone Expansion (Placeholder)',
+        imageUrl: facCraneSlabImg,
+        technicalLabel: 'Site Reference 03',
       },
       {
         id: 'fac-04',
-        title: 'Quality Testing Laboratory Site',
-        description: 'Calibrated laboratory area for continuous compressive stress and absorption checks.',
+        title: 'Facility Yards and Logistics Site',
+        description: '',
         svgType: 'facility',
-        technicalLabel: 'SANAS Accredited Test Facility Layout (Placeholder)',
+        imageUrl: facSiteGarageImg,
+        technicalLabel: 'Site Reference 04',
+      },
+      {
+        id: 'fac-05',
+        title: 'Interlocking Masonry Substation Unit',
+        description: '',
+        svgType: 'facility',
+        imageUrl: facUtilitySubstationImg,
+        technicalLabel: 'Site Reference 05',
+      },
+      {
+        id: 'fac-06',
+        title: 'Pitched Roof Facility Structure',
+        description: '',
+        svgType: 'facility',
+        imageUrl: facBlueRoofImg,
+        technicalLabel: 'Site Reference 06',
+      },
+      {
+        id: 'fac-07',
+        title: 'Finished Facility Interior Space',
+        description: '',
+        svgType: 'facility',
+        imageUrl: facInteriorRoomImg,
+        technicalLabel: 'Site Reference 07',
       },
     ],
   },
   {
     id: 'community-workforce',
     title: 'Community and Workforce',
-    subtitle: 'Technical training, plant operators, and local capacity building',
+    subtitle: 'Technical training, on-site artisans, and local workforce development',
     coverImage: {
       id: 'workforce-cover',
-      title: 'Technical Plant Operations Team',
-      description: 'Trained local operators managing precision batching and machine maintenance.',
+      title: 'Workforce Assembly and Alignment',
+      description: '',
       svgType: 'workforce',
-      technicalLabel: 'Operations Crew: Regional Plant Training (Placeholder)',
+      imageUrl: workSpiritLevelImg,
+      technicalLabel: 'Workforce Reference 01',
     },
     photos: [
       {
         id: 'work-01',
-        title: 'Technical Operators at Batching Console',
-        description: 'Local technicians operating the digital batching and hydration control interface.',
+        title: 'Precision Spirit Level Alignment on Wall Assembly',
+        description: '',
         svgType: 'workforce',
-        technicalLabel: 'Operator Certification Program (Placeholder)',
+        imageUrl: workSpiritLevelImg,
+        technicalLabel: 'Workforce Reference 01',
       },
       {
         id: 'work-02',
-        title: 'Quality Assurance and Sampling Staff',
-        description: 'Quality technicians conducting hourly dimensional and density audit logs.',
+        title: 'Artisan Team on Wall Scaffolding',
+        description: '',
         svgType: 'workforce',
-        technicalLabel: 'Plant Quality Team: Batch Inspection (Placeholder)',
+        imageUrl: workScaffoldingImg,
+        technicalLabel: 'Workforce Reference 02',
       },
       {
         id: 'work-03',
-        title: 'Masonry and Dry-Stack Training Session',
-        description: 'Practical training for regional contractors and artisans on interlocking construction methods.',
+        title: 'Foundation Trenching & Base Course Setting',
+        description: '',
         svgType: 'workforce',
-        technicalLabel: 'Vocational Masonry Workshop (Placeholder)',
+        imageUrl: workFoundationTrenchImg,
+        technicalLabel: 'Workforce Reference 03',
       },
       {
         id: 'work-04',
-        title: 'Plant Safety and Maintenance Team',
-        description: 'Dedicated team ensuring strict adherence to industrial safety and machine upkeep protocols.',
+        title: 'Masonry Crew Retaining Wall Assembly',
+        description: '',
         svgType: 'workforce',
-        technicalLabel: 'Plant Safety & Operations Review (Placeholder)',
+        imageUrl: workRetainingWallImg,
+        technicalLabel: 'Workforce Reference 04',
+      },
+      {
+        id: 'work-05',
+        title: 'Crane Slabs Installation Team',
+        description: '',
+        svgType: 'workforce',
+        imageUrl: workCraneInstallImg,
+        technicalLabel: 'Workforce Reference 05',
       },
     ],
   },

@@ -130,28 +130,39 @@ export const Lightbox: React.FC<LightboxProps> = ({
         </div>
 
         {/* Caption & Technical Note */}
-        <div className="px-5 py-3.5 bg-[#2E3947] border-t border-[#3C4857]">
-          <p className="text-sm text-[#DCE8F1] leading-relaxed">
-            {currentPhoto.description}
-          </p>
+        <div className="px-5 py-3 bg-[#2E3947] border-t border-[#3C4857]">
+          {currentPhoto.description ? (
+            <p className="text-sm text-[#DCE8F1] leading-relaxed mb-3">
+              {currentPhoto.description}
+            </p>
+          ) : null}
 
           {/* Thumbnails row */}
-          <div className="flex items-center gap-2 mt-3 overflow-x-auto pb-1 pt-1">
+          <div className="flex items-center gap-2 overflow-x-auto pb-1 pt-1">
             {album.photos.map((p, idx) => (
               <button
                 key={p.id}
                 type="button"
                 onClick={() => onSelectIndex(idx)}
                 aria-label={`Go to slide ${idx + 1}: ${p.title}`}
-                className={`h-12 w-16 shrink-0 rounded-xs border overflow-hidden transition-all cursor-pointer ${
+                className={`h-12 w-16 shrink-0 rounded-xs border overflow-hidden transition-all cursor-pointer relative ${
                   idx === currentIndex
                     ? 'border-[#D96708] ring-1 ring-[#D96708] opacity-100'
                     : 'border-[#3C4857] opacity-60 hover:opacity-100'
                 }`}
               >
-                <div className="w-full h-full bg-[#232B33] flex items-center justify-center text-[10px] text-[#9AA0A6] font-mono">
-                  {idx + 1}
-                </div>
+                {p.imageUrl ? (
+                  <img
+                    src={p.imageUrl}
+                    alt={p.title}
+                    referrerPolicy="no-referrer"
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <div className="w-full h-full bg-[#232B33] flex items-center justify-center text-[10px] text-[#9AA0A6] font-mono">
+                    {idx + 1}
+                  </div>
+                )}
               </button>
             ))}
           </div>
