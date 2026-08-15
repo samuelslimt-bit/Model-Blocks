@@ -24,21 +24,25 @@ export const PlaceholderImage: React.FC<PlaceholderImageProps> = ({
       >
         <img
           src={photo.imageUrl}
-          alt={photo.title}
+          alt={photo.title || 'Gallery image'}
           referrerPolicy="no-referrer"
-          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+          className={`w-full h-full ${isCover ? 'object-cover' : 'object-contain'} transition-transform duration-300 group-hover:scale-102`}
           onError={() => setImageError(true)}
           loading="lazy"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#232B33]/80 via-transparent to-transparent pointer-events-none" />
-        <div className="absolute bottom-0 inset-x-0 bg-[#232B33]/90 backdrop-blur-xs px-3 py-1.5 border-t border-[#3C4857] flex items-center justify-between z-10">
-          <span className="text-[11px] text-[#DCE8F1] font-mono tracking-tight truncate">
-            {photo.title}
-          </span>
-          <span className="text-[10px] uppercase font-semibold text-[#22699F] tracking-wider px-1.5 py-0.2 bg-[#DCE8F1]/15 border border-[#22699F]/40 rounded-xs shrink-0 flex items-center gap-1">
-            <ImageIcon className="w-2.5 h-2.5" /> Photo
-          </span>
-        </div>
+        {photo.title ? (
+          <>
+            <div className="absolute inset-0 bg-gradient-to-t from-[#232B33]/80 via-transparent to-transparent pointer-events-none" />
+            <div className="absolute bottom-0 inset-x-0 bg-[#232B33]/90 backdrop-blur-xs px-3 py-1.5 border-t border-[#3C4857] flex items-center justify-between z-10">
+              <span className="text-[11px] text-[#DCE8F1] font-mono tracking-tight truncate">
+                {photo.title}
+              </span>
+              <span className="text-[10px] uppercase font-semibold text-[#22699F] tracking-wider px-1.5 py-0.2 bg-[#DCE8F1]/15 border border-[#22699F]/40 rounded-xs shrink-0 flex items-center gap-1">
+                <ImageIcon className="w-2.5 h-2.5" /> Photo
+              </span>
+            </div>
+          </>
+        ) : null}
       </div>
     );
   }

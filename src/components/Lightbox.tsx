@@ -107,66 +107,74 @@ export const Lightbox: React.FC<LightboxProps> = ({
           </div>
 
           {/* Left Arrow */}
-          <button
-            id="lightbox-prev-button"
-            type="button"
-            onClick={onPrev}
-            aria-label="Previous photograph"
-            className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 bg-[#232B33]/85 text-[#FFFFFF] hover:bg-[#D96708] border border-[#3C4857] p-2.5 rounded-full transition-colors cursor-pointer z-20 shadow-md"
-          >
-            <ChevronLeft className="w-5 h-5" aria-hidden="true" />
-          </button>
+          {totalPhotos > 1 && (
+            <button
+              id="lightbox-prev-button"
+              type="button"
+              onClick={onPrev}
+              aria-label="Previous photograph"
+              className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 bg-[#232B33]/85 text-[#FFFFFF] hover:bg-[#D96708] border border-[#3C4857] p-2.5 rounded-full transition-colors cursor-pointer z-20 shadow-md"
+            >
+              <ChevronLeft className="w-5 h-5" aria-hidden="true" />
+            </button>
+          )}
 
           {/* Right Arrow */}
-          <button
-            id="lightbox-next-button"
-            type="button"
-            onClick={onNext}
-            aria-label="Next photograph"
-            className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 bg-[#232B33]/85 text-[#FFFFFF] hover:bg-[#D96708] border border-[#3C4857] p-2.5 rounded-full transition-colors cursor-pointer z-20 shadow-md"
-          >
-            <ChevronRight className="w-5 h-5" aria-hidden="true" />
-          </button>
+          {totalPhotos > 1 && (
+            <button
+              id="lightbox-next-button"
+              type="button"
+              onClick={onNext}
+              aria-label="Next photograph"
+              className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 bg-[#232B33]/85 text-[#FFFFFF] hover:bg-[#D96708] border border-[#3C4857] p-2.5 rounded-full transition-colors cursor-pointer z-20 shadow-md"
+            >
+              <ChevronRight className="w-5 h-5" aria-hidden="true" />
+            </button>
+          )}
         </div>
 
-        {/* Caption & Technical Note */}
-        <div className="px-5 py-3 bg-[#2E3947] border-t border-[#3C4857]">
-          {currentPhoto.description ? (
-            <p className="text-sm text-[#DCE8F1] leading-relaxed mb-3">
-              {currentPhoto.description}
-            </p>
-          ) : null}
+        {/* Caption & Thumbnails Note (only if description exists or multiple photos) */}
+        {(currentPhoto.description || totalPhotos > 1) && (
+          <div className="px-5 py-3 bg-[#2E3947] border-t border-[#3C4857]">
+            {currentPhoto.description ? (
+              <p className="text-sm text-[#DCE8F1] leading-relaxed mb-3">
+                {currentPhoto.description}
+              </p>
+            ) : null}
 
-          {/* Thumbnails row */}
-          <div className="flex items-center gap-2 overflow-x-auto pb-1 pt-1">
-            {album.photos.map((p, idx) => (
-              <button
-                key={p.id}
-                type="button"
-                onClick={() => onSelectIndex(idx)}
-                aria-label={`Go to slide ${idx + 1}: ${p.title}`}
-                className={`h-12 w-16 shrink-0 rounded-xs border overflow-hidden transition-all cursor-pointer relative ${
-                  idx === currentIndex
-                    ? 'border-[#D96708] ring-1 ring-[#D96708] opacity-100'
-                    : 'border-[#3C4857] opacity-60 hover:opacity-100'
-                }`}
-              >
-                {p.imageUrl ? (
-                  <img
-                    src={p.imageUrl}
-                    alt={p.title}
-                    referrerPolicy="no-referrer"
-                    className="w-full h-full object-cover"
-                  />
-                ) : (
-                  <div className="w-full h-full bg-[#232B33] flex items-center justify-center text-[10px] text-[#9AA0A6] font-mono">
-                    {idx + 1}
-                  </div>
-                )}
-              </button>
-            ))}
+            {/* Thumbnails row */}
+            {totalPhotos > 1 && (
+              <div className="flex items-center gap-2 overflow-x-auto pb-1 pt-1">
+                {album.photos.map((p, idx) => (
+                  <button
+                    key={p.id}
+                    type="button"
+                    onClick={() => onSelectIndex(idx)}
+                    aria-label={`Go to slide ${idx + 1}: ${p.title}`}
+                    className={`h-12 w-16 shrink-0 rounded-xs border overflow-hidden transition-all cursor-pointer relative ${
+                      idx === currentIndex
+                        ? 'border-[#D96708] ring-1 ring-[#D96708] opacity-100'
+                        : 'border-[#3C4857] opacity-60 hover:opacity-100'
+                    }`}
+                  >
+                    {p.imageUrl ? (
+                      <img
+                        src={p.imageUrl}
+                        alt={p.title}
+                        referrerPolicy="no-referrer"
+                        className="w-full h-full object-cover"
+                      />
+                    ) : (
+                      <div className="w-full h-full bg-[#232B33] flex items-center justify-center text-[10px] text-[#9AA0A6] font-mono">
+                        {idx + 1}
+                      </div>
+                    )}
+                  </button>
+                ))}
+              </div>
+            )}
           </div>
-        </div>
+        )}
       </div>
     </div>
   );
