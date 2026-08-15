@@ -96,9 +96,6 @@ export default function App() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
               {/* Left Column: Hero Content */}
               <div className="lg:col-span-7">
-                <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#DCE8F1]/60 text-[#22699F] border border-[#22699F]/30 rounded-xs text-xs font-semibold uppercase tracking-wider mb-4">
-                  <ShieldCheck className="w-3.5 h-3.5" /> Patented Technology (Ref: 65749)
-                </div>
 
                 <h1
                   id="home-company-name"
@@ -543,17 +540,17 @@ export default function App() {
                 </a>
               </div>
 
-              {/* Phone (Placeholder marked in code) */}
+              {/* Phone (Placeholder marked in code) 
               <div className="flex items-center justify-between pt-0.5">
                 <span className="flex items-center gap-2 font-bold text-xs uppercase tracking-widest text-[#9AA0A6]">
                   <Phone className="w-3.5 h-3.5 text-[#5B6570]" aria-hidden="true" />
                   Telephone
                 </span>
-                {/* PLACEHOLDER: Replace with official corporate telephone number */}
+                {/* PLACEHOLDER: Replace with official corporate telephone number 
                 <span className="text-[#5B6570] font-mono text-xs sm:text-sm">
-                  [placeholder, add real number]
-                </span>
-              </div>
+                  [placeholder, add real number] 
+                </span> 
+              </div> */}
             </div>
           </div>
         </section>
