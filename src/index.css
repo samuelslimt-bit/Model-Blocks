@@ -1,1 +1,27 @@
 @import "tailwindcss";
+
+/* Prevent accidental click/tap text selection on interactive elements, preserving long-press selection */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button,
+a,
+[role="button"],
+nav,
+.no-select {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+body,
+p,
+span,
+blockquote,
+td,
+th {
+  -webkit-touch-callout: default;
+  -webkit-user-select: text;
+  user-select: text;
+}

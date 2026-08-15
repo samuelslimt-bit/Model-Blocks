@@ -7,6 +7,8 @@ import { Lightbox } from './components/Lightbox';
 import { PlaceholderImage } from './components/PlaceholderImage';
 import { galleryAlbums } from './data/galleryData';
 import { GalleryAlbum } from './types';
+import strongerFoundationImg from './assets/images/stronger_foundation_1786814419486.jpg';
+import heroBannerImg from './assets/images/hero_site_banner_1786814625964.jpg';
 import {
   ShieldCheck,
   Target,
@@ -85,34 +87,72 @@ export default function App() {
 
       {/* Main Content Area */}
       <main className="flex-1 pt-16 sm:pt-18">
-        {/* SECTION 1: HOME */}
+        {/* SECTION 1: HOME (HERO) */}
         <section
           id="home"
-          className="border-b border-[#B9C2CC]/60 bg-[#FFFFFF] py-16 sm:py-24 px-4 sm:px-6 lg:px-8"
+          className="border-b border-[#B9C2CC]/60 bg-[#FFFFFF] py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8"
         >
-          <div className="max-w-4xl mx-auto">
-            <h1
-              id="home-company-name"
-              className="text-4xl sm:text-5xl font-bold tracking-tight text-[#232B33] mb-4 leading-tight"
-            >
-              Modify Services Limited
-            </h1>
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+              {/* Left Column: Hero Content */}
+              <div className="lg:col-span-7">
+                <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#DCE8F1]/60 text-[#22699F] border border-[#22699F]/30 rounded-xs text-xs font-semibold uppercase tracking-wider mb-4">
+                  <ShieldCheck className="w-3.5 h-3.5" /> Patented Technology (Ref: 65749)
+                </div>
 
-            <p
-              id="home-tagline"
-              className="text-[#D96708] text-lg sm:text-xl font-medium mb-6 tracking-wide uppercase"
-            >
-              Securing the future of Nigerian infrastructure, one block at a time.
-            </p>
+                <h1
+                  id="home-company-name"
+                  className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#232B33] mb-4 leading-tight"
+                >
+                  Modify Services Limited
+                </h1>
 
-            <div className="w-24 h-1 bg-[#D96708] mb-6"></div>
+                <p
+                  id="home-tagline"
+                  className="text-[#D96708] text-base sm:text-lg lg:text-xl font-semibold mb-5 tracking-wide uppercase"
+                >
+                  Securing the future of Nigerian infrastructure, one block at a time.
+                </p>
 
-            <p
-              id="home-description"
-              className="text-base sm:text-lg text-[#5B6570] leading-relaxed max-w-2xl"
-            >
-              Modify Services Limited is a Nigerian infrastructure technology company that manufactures Modify Blocks (Patented Technology, Ref: 65749), an engineered concrete block designed to replace traditional sandcrete construction with a stronger, more consistent, and more efficient building material.
-            </p>
+                <div className="w-20 h-1 bg-[#D96708] mb-5"></div>
+
+                <p
+                  id="home-description"
+                  className="text-base sm:text-lg text-[#5B6570] leading-relaxed"
+                >
+                  Modify Services Limited is a Nigerian infrastructure technology company that manufactures Modify Blocks (Patented Technology, Ref: 65749), an engineered concrete block designed to replace traditional sandcrete construction with a stronger, more consistent, and more efficient building material.
+                </p>
+
+                <div className="mt-6 flex flex-wrap items-center gap-3 text-xs font-mono text-[#232B33]">
+                  <span className="bg-[#F4F4EF] px-3 py-1.5 rounded-xs border border-[#B9C2CC]/70 font-semibold">
+                    22.2 MPa Compressive Strength
+                  </span>
+                  <span className="bg-[#F4F4EF] px-3 py-1.5 rounded-xs border border-[#B9C2CC]/70 font-semibold">
+                    SANS 1215 Certified
+                  </span>
+                </div>
+              </div>
+
+              {/* Right Column: Hero Banner Image */}
+              <div className="lg:col-span-5">
+                <div
+                  id="hero-banner-image-container"
+                  className="relative rounded-sm overflow-hidden border border-[#B9C2CC] shadow-md bg-[#2E3947] group"
+                >
+                  <img
+                    src={heroBannerImg}
+                    alt="Modify Blocks active project site demonstration with executive team"
+                    referrerPolicy="no-referrer"
+                    className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-102"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#232B33]/80 via-transparent to-transparent pointer-events-none" />
+                  <div className="absolute bottom-0 inset-x-0 bg-[#232B33]/90 backdrop-blur-xs px-3.5 py-2 border-t border-[#3C4857] flex items-center justify-between text-xs text-[#DCE8F1]">
+                    <span className="font-mono text-[11px] truncate">Active Site Wall Assembly Demonstration</span>
+                    <span className="text-[#D96708] font-bold text-[10px] uppercase tracking-wider">Field Deployment</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -251,6 +291,19 @@ export default function App() {
                 </div>
               </div>
             </div>
+          </div>
+
+          {/* Foundation & Next-Gen Real Estate Visual Banner */}
+          <div
+            id="technical-specs-banner"
+            className="mb-10 rounded-sm overflow-hidden border border-[#B9C2CC] bg-[#FFFFFF] shadow-xs"
+          >
+            <img
+              src={strongerFoundationImg}
+              alt="The next generation of Nigerian real estate starts with a stronger foundation. Commercially graded and tested. Engineered for maximum cost-efficiency. Ready for immediate scale and deployment."
+              referrerPolicy="no-referrer"
+              className="w-full h-auto object-contain block"
+            />
           </div>
 
           {/* Specification Table */}
